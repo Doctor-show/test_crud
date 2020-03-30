@@ -1,0 +1,24 @@
+
+Чтобы локально развернуть проект нужно настроить удобную дб.
+Cоздать миграции, 
+python manage.py makemigrations
+и прменить их 
+python manage.py migrate
+
+LДля создания админа.
+python manage.py createsuperuser 
+
+для установки всего необходимого pip install -r requirements.txt
+
+
+После регистрации переходим по url и создаем токен, для этого будет необходимо снова авторизоваться.
+http://localhost:8000/api/v1/auth_token/token/login   создаем токен исользуя креды superusera-a 
+
+
+
+Обязательный заголовок KEY: Authorization, Value:Token token_from_adminpanel.
+localhost:8000/api/v1/data/list/    отображет список всех данных в бд
+localhost:8000/api/v1/data/create/   
+обязательные столбцы для заполнения, name(max length 64), description(max length 128), user, и значение, его user_id
+
+localhost:8000/api/v1/data/check/id_number/ здесь endpoint в зависимости от метода, обновляет(put/patch, удаляет(delete), просмотр(get). 
